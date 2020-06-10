@@ -111,5 +111,25 @@ namespace Ветвление_10._06__1
 
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0') && (e.KeyChar <= '9'))
+            {
+                if (textBox1.Text.Length == 9 && textBox1.Text.Length <= 9)
+                {
+                    e.Handled = true;
+                }
+                return;
+            }
+            if (Char.IsControl(e.KeyChar))
+            {
+                if (e.KeyChar == (char)Keys.Back)
+                {
+                    return;
+                }
+            }
+            e.Handled = true;
+        }
     }
 }
